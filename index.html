@@ -78,7 +78,7 @@
   --t-h3:   clamp(28px, 3.2vw, 48px);
   --t-h2:   clamp(40px, 5vw, 78px);
   --t-h1:   clamp(60px, 9vw, 148px);
-  --t-mega: clamp(80px, 14vw, 240px);
+  --t-mega: clamp(52px, 8vw, 140px);
 }
 
 /* alt grounds */
@@ -103,7 +103,7 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
-html { background: var(--bg); }
+html { background: var(--bg); overflow-x: hidden; }
 body{
   font-family: var(--f-sans);
   font-size: var(--t-body);
@@ -464,6 +464,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
   padding: clamp(80px, 14vh, 200px) var(--pad-x);
   display: grid;
   gap: clamp(28px, 5vh, 60px);
+  overflow: hidden;
 }
 .contact .kicker { color: var(--ink-mute); }
 .contact .lede{
@@ -511,6 +512,25 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
 @media (max-width: 700px){ .foot{ grid-template-columns: 1fr; } .foot .right, .foot .center{ text-align: left; } }
 
 /* ─── Tweaks panel ─── */
+/* Tweaks trigger button */
+#tweaks-trigger{
+  position: fixed; right: 20px; bottom: 20px;
+  width: 36px; height: 36px;
+  border-radius: 999px;
+  background: color-mix(in oklch, var(--bg) 70%, transparent);
+  border: 1px solid var(--rule);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  z-index: 999;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ink-mute);
+  font-family: var(--f-mono); font-size: 13px;
+  cursor: pointer;
+  transition: opacity 280ms, color 280ms, border-color 280ms;
+  opacity: 0.5;
+}
+#tweaks-trigger:hover{ opacity: 1; color: var(--ink); border-color: var(--ink-soft); }
+body[data-tweaks-open="true"] #tweaks-trigger{ display: none; }
+
 #tweaks{
   position: fixed; right: 20px; bottom: 20px;
   width: 280px;
@@ -606,8 +626,8 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <div>
       <div class="meta" data-i18n="hero_index" data-gr="Eolos Design Lab · Αθήνα">Eolos Design Lab · Athens</div>
       <p class="pretitle" style="margin-top: 12px;" data-i18n="hero_pretitle"
-         data-gr="Χώρος, brand και digital υπό μία διεύθυνση. Για ξενοδοχεία, εστιατόρια, γραφεία, retail και wellness.">
-        Space, brand and digital under one direction. For hotels, restaurants, offices, retail and wellness.
+         data-gr="Χώρος, brand και digital υπό μία διεύθυνση. Για κάθε επιχείρηση που σχεδιάζει σοβαρά.">
+        Space, brand and digital under one direction. For every business that takes design seriously.
       </p>
       <h1>
         <span data-i18n="hero_h1_1" data-gr="Ο σχεδιασμός της επιχείρησής σου">The design of your business</span>
@@ -662,11 +682,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       <div class="row">
         <div class="num meta">N° 01 / 08</div>
         <h3 class="title">
-          <span data-i18n="w1_t1" data-gr="Μεσογειακή">Mediterranean</span>
-          <em data-i18n="w1_t2" data-gr=" λιτότητα"> minimal.</em>
+          <span data-i18n="w1_t1">K38</span>
         </h3>
         <div class="meta-r">
-          <span class="pill" data-i18n="w1_kind" data-gr="BTR · Προσαρμογή Ακινήτου">BTR · Asset Adaptation</span>
+          <span class="pill" data-i18n="w1_kind" data-gr="Προσαρμογή Ακινήτου BTR">BTR Asset Adaptation</span>
         </div>
       </div>
     </article>
@@ -680,11 +699,11 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       <div class="row">
         <div class="num meta">N° 02 / 08</div>
         <h3 class="title">
-          <span data-i18n="w2_t1" data-gr="Ο χώρος">The room,</span>
-          <em data-i18n="w2_t2" data-gr=" πριν τον χώρο."> before the room.</em>
+          <span data-i18n="w2_t1">Bistró</span>
+          <em data-i18n="w2_t2"> Dterra</em>
         </h3>
         <div class="meta-r">
-          <span class="pill" data-i18n="w2_kind" data-gr="Εστιατόριο · Interior Design">Restaurant · Interior Design</span>
+          <span class="pill" data-i18n="w2_kind" data-gr="Εστιατόριο · Interior Design & Branding">Restaurant · Interior Design & Branding</span>
         </div>
       </div>
     </article>
@@ -698,11 +717,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       <div class="row">
         <div class="num meta">N° 03 / 08</div>
         <h3 class="title">
-          <span data-i18n="w3_t1" data-gr="Πωλείται">Sold by</span>
-          <em data-i18n="w3_t2" data-gr=" με ηλιόφως."> sunlight.</em>
+          <span data-i18n="w3_t1">A75</span>
         </h3>
         <div class="meta-r">
-          <span class="pill" data-i18n="w3_kind" data-gr="Premium · Επανατοποθέτηση Ακινήτου">Premium · Asset Repositioning</span>
+          <span class="pill" data-i18n="w3_kind" data-gr="Επανατοποθέτηση Premium Ακινήτου">Premium Asset Repositioning</span>
         </div>
       </div>
     </article>
@@ -716,11 +734,11 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       <div class="row">
         <div class="num meta">N° 04 / 08</div>
         <h3 class="title">
-          <span data-i18n="w4_t1" data-gr="Σοβάς, τερακότα,">Plaster, terracotta,</span>
-          <em data-i18n="w4_t2" data-gr=" τελετουργία."> ritual.</em>
+          <span data-i18n="w4_t1">Granolita</span>
+          <em data-i18n="w4_t2"> Coffee Brand</em>
         </h3>
         <div class="meta-r">
-          <span class="pill" data-i18n="w4_kind" data-gr="Ολοκληρωμένη Εμπειρία · F&amp;B">Complete Experience · F&amp;B</span>
+          <span class="pill" data-i18n="w4_kind" data-gr="Interior Design · Branding · Web">Interior Design · Branding · Web</span>
         </div>
       </div>
     </article>
@@ -734,11 +752,11 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       <div class="row">
         <div class="num meta">N° 05 / 08</div>
         <h3 class="title">
-          <span data-i18n="w5_t1" data-gr="Ήσυχη πολυτέλεια,">Quiet luxury,</span>
-          <em data-i18n="w5_t2" data-gr=" δυνατά περιθώρια."> louder margins.</em>
+          <span data-i18n="w5_t1">Selva</span>
+          <em data-i18n="w5_t2"> Hotel</em>
         </h3>
         <div class="meta-r">
-          <span class="pill" data-i18n="w5_kind" data-gr="Hotel · Ολοκληρωμένη Εμπειρία">Hotel · Complete Experience</span>
+          <span class="pill" data-i18n="w5_kind" data-gr="Hotel · Interior Design · Branding · Web">Hotel · Interior · Branding · Web</span>
         </div>
       </div>
     </article>
@@ -752,8 +770,8 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       <div class="row">
         <div class="num meta">N° 06 / 08</div>
         <h3 class="title">
-          <span data-i18n="w6_t1" data-gr="Βόρειο φως,">Northern light,</span>
-          <em data-i18n="w6_t2" data-gr=" μεσογειακή ανάγνωση."> Mediterranean read.</em>
+          <span data-i18n="w6_t1">Norrsken</span>
+          <em data-i18n="w6_t2"> Office</em>
         </h3>
         <div class="meta-r">
           <span class="pill" data-i18n="w6_kind" data-gr="Γραφεία · Interior Design">Office · Interior Design</span>
@@ -770,11 +788,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       <div class="row">
         <div class="num meta">N° 07 / 08</div>
         <h3 class="title">
-          <span data-i18n="w7_t1" data-gr="Επένδυση">Investment</span>
-          <em data-i18n="w7_t2" data-gr=" που φαίνεται."> that shows.</em>
+          <span data-i18n="w7_t1">V1</span>
         </h3>
         <div class="meta-r">
-          <span class="pill" data-i18n="w7_kind" data-gr="Boutique · Μονάδα Επένδυσης">Boutique · Investment Unit</span>
+          <span class="pill" data-i18n="w7_kind" data-gr="Boutique Μονάδα Επένδυσης">Boutique Investment Unit</span>
         </div>
       </div>
     </article>
@@ -788,11 +805,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       <div class="row">
         <div class="num meta">N° 08 / 08</div>
         <h3 class="title">
-          <span data-i18n="w8_t1" data-gr="Αξιοποίηση">Optimized</span>
-          <em data-i18n="w8_t2" data-gr=" τουριστικής μίσθωσης."> short-term rental.</em>
+          <span data-i18n="w8_t1">K12</span>
         </h3>
         <div class="meta-r">
-          <span class="pill" data-i18n="w8_kind" data-gr="Τουριστική Μίσθωση · Βελτιστοποίηση">Short-term Rental · Optimization</span>
+          <span class="pill" data-i18n="w8_kind" data-gr="Βελτιστοποίηση Τουριστικής Μίσθωσης">Short-term Rental Optimization</span>
         </div>
       </div>
     </article>
@@ -972,6 +988,9 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 
 </main>
 
+<!-- ─── TWEAKS TRIGGER ────────────────────────────────────── -->
+<button id="tweaks-trigger" type="button" aria-label="Open tweaks panel" title="Tweaks (?)">⚙</button>
+
 <!-- ─── TWEAKS PANEL ─────────────────────────────────────── -->
 <aside id="tweaks" aria-label="Tweaks">
   <header>
@@ -1092,6 +1111,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   document.getElementById("tweaks-close").addEventListener("click", () => {
     body.dataset.tweaksOpen = "false";
     try { window.parent.postMessage({ type: "__edit_mode_dismissed" }, "*"); } catch(e) {}
+  });
+  // trigger button
+  document.getElementById("tweaks-trigger").addEventListener("click", () => {
+    body.dataset.tweaksOpen = "true";
   });
 
   /* ── tweak host protocol ──────────────────────────────── */
