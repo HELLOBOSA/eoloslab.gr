@@ -83,9 +83,13 @@
 
 /* alt grounds */
 [data-ground="black"]{
-  --bg: oklch(0.10 0.005 60);
-  --bg-2: oklch(0.13 0.006 60);
-  --rule: oklch(0.24 0.008 60);
+  --bg: oklch(0.00 0 0);
+  --bg-2: oklch(0.06 0 0);
+  --rule: oklch(0.18 0 0);
+  --ink: oklch(0.97 0 0);
+  --ink-soft: oklch(0.82 0 0);
+  --ink-mute: oklch(0.55 0 0);
+  --ink-faint: oklch(0.35 0 0);
 }
 [data-ground="light"]{
   --ink: oklch(0.18 0.012 56);
@@ -311,6 +315,10 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
 .work .frame{
   position: relative; overflow: hidden;
   background: var(--bg-2);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 3px;
   aspect-ratio: 16 / 10;
 }
 .work .frame img{
@@ -318,6 +326,13 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
   transition: transform 1400ms cubic-bezier(.2,.7,.2,1), filter 600ms ease;
   filter: saturate(0.94) brightness(0.94);
 }
+.work .frame img:first-child{
+  grid-column: 1; grid-row: 1 / -1;
+}
+.work .frame img:nth-child(2){ grid-column: 2; grid-row: 1; }
+.work .frame img:nth-child(3){ grid-column: 2; grid-row: 2; }
+/* single image fallback */
+.work .frame img:only-child{ grid-column: 1 / -1; grid-row: 1 / -1; }
 .work:hover .frame img{ transform: scale(1.025); filter: saturate(1.02) brightness(1); }
 .work .frame .stamp{
   position: absolute; left: 18px; top: 18px;
@@ -596,7 +611,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   <div class="wm">
     <span class="dot"></span>
     <span data-i18n="brand">Eolos Design Lab</span>
-    <span class="sub" data-i18n="brand_sub">/ GR</span>
+    <span class="sub" data-i18n="brand_sub" style="display:none;">/ GR</span>
   </div>
   <nav>
     <a href="#work" class="tab"        data-i18n="nav_work">Work</a>
@@ -676,8 +691,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <!-- 01 K38 -->
     <article class="work" data-screen-label="Work · K38">
       <div class="frame">
-        <img src="assets/k38.jpeg" alt="K38 — residential interior"
+        <img src="assets/k38.jpeg" alt="K38 — BTR asset adaptation" loading="lazy"
              onerror="this.parentElement.classList.add('fallback'); this.style.display='none';" />
+        <img src="assets/gallery/k38-2.jpeg" alt="K38 — interior detail" loading="lazy" />
+        <img src="assets/gallery/k38-3.jpeg" alt="K38 — living space" loading="lazy" />
       </div>
       <div class="row">
         <div class="num meta">N° 01 / 08</div>
@@ -693,8 +710,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <!-- 02 Dterra -->
     <article class="work" data-bleed="asym-right" data-screen-label="Work · Dterra">
       <div class="frame">
-        <img src="assets/dterra.jpeg" alt="Dterra — restaurant space visualization"
+        <img src="assets/dterra.jpeg" alt="Bistró Dterra — restaurant interior design" loading="lazy"
              onerror="this.parentElement.classList.add('fallback'); this.style.display='none';" />
+        <img src="assets/gallery/dterra-2.jpeg" alt="Dterra — dining area" loading="lazy" />
+        <img src="assets/gallery/dterra-3.jpeg" alt="Dterra — bar detail" loading="lazy" />
       </div>
       <div class="row">
         <div class="num meta">N° 02 / 08</div>
@@ -711,8 +730,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <!-- 03 A75 -->
     <article class="work" data-screen-label="Work · A75">
       <div class="frame">
-        <img src="assets/a75.jpeg" alt="A75 — luxury residential visualization"
+        <img src="assets/a75.jpeg" alt="A75 — premium asset repositioning" loading="lazy"
              onerror="this.parentElement.classList.add('fallback'); this.style.display='none';" />
+        <img src="assets/gallery/a75-2.jpeg" alt="A75 — living room" loading="lazy" />
+        <img src="assets/gallery/a75-3.jpeg" alt="A75 — bedroom" loading="lazy" />
       </div>
       <div class="row">
         <div class="num meta">N° 03 / 08</div>
@@ -728,8 +749,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <!-- 04 Granolita -->
     <article class="work" data-bleed="asym-left" data-screen-label="Work · Granolita">
       <div class="frame">
-        <img src="assets/granolita.jpeg" alt="Granolita — brand identity"
+        <img src="assets/granolita.jpeg" alt="Granolita Coffee Brand — interior design, branding and web" loading="lazy"
              onerror="this.parentElement.classList.add('fallback'); this.style.display='none';" />
+        <img src="assets/gallery/granolita-2.jpeg" alt="Granolita — café interior" loading="lazy" />
+        <img src="assets/gallery/granolita-3.jpeg" alt="Granolita — brand packaging" loading="lazy" />
       </div>
       <div class="row">
         <div class="num meta">N° 04 / 08</div>
@@ -746,8 +769,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <!-- 05 Selva -->
     <article class="work" data-screen-label="Work · Selva">
       <div class="frame">
-        <img src="assets/selva.jpeg" alt="Selva — wellness brand identity"
+        <img src="assets/selva.jpeg" alt="Selva Hotel — hotel interior design and branding" loading="lazy"
              onerror="this.parentElement.classList.add('fallback'); this.style.display='none';" />
+        <img src="assets/gallery/selva-2.jpeg" alt="Selva Hotel — lobby" loading="lazy" />
+        <img src="assets/gallery/selva-3.jpeg" alt="Selva Hotel — room" loading="lazy" />
       </div>
       <div class="row">
         <div class="num meta">N° 05 / 08</div>
@@ -764,8 +789,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <!-- 06 Norrsken -->
     <article class="work" data-bleed="asym-right" data-screen-label="Work · Norrsken">
       <div class="frame">
-        <img src="assets/norrsken.jpeg" alt="Norrsken — residential visualization"
+        <img src="assets/norrsken.jpeg" alt="Norrsken Office — office interior design" loading="lazy"
              onerror="this.parentElement.classList.add('fallback'); this.style.display='none';" />
+        <img src="assets/gallery/norrsken-2.jpeg" alt="Norrsken — workspace" loading="lazy" />
+        <img src="assets/gallery/norrsken-3.jpeg" alt="Norrsken — collaborative area" loading="lazy" />
       </div>
       <div class="row">
         <div class="num meta">N° 06 / 08</div>
@@ -782,8 +809,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <!-- 07 V1 -->
     <article class="work" data-bleed="asym-left" data-screen-label="Work · V1">
       <div class="frame">
-        <img src="assets/v1.png" alt="V1 — boutique investment unit"
+        <img src="assets/v1.png" alt="V1 — boutique investment unit" loading="lazy"
              onerror="this.parentElement.classList.add('fallback'); this.style.display='none';" />
+        <img src="assets/gallery/v1-2.jpeg" alt="V1 — interior" loading="lazy" />
+        <img src="assets/gallery/v1-3.jpeg" alt="V1 — detail" loading="lazy" />
       </div>
       <div class="row">
         <div class="num meta">N° 07 / 08</div>
@@ -799,8 +828,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <!-- 08 K12 -->
     <article class="work" data-screen-label="Work · K12">
       <div class="frame">
-        <img src="assets/k12.webp" alt="K12 — short-term rental optimization"
+        <img src="assets/k12.webp" alt="K12 — short-term rental optimization" loading="lazy"
              onerror="this.parentElement.classList.add('fallback'); this.style.display='none';" />
+        <img src="assets/gallery/k12-2.webp" alt="K12 — living area" loading="lazy" />
+        <img src="assets/gallery/k12-3.webp" alt="K12 — bedroom" loading="lazy" />
       </div>
       <div class="row">
         <div class="num meta">N° 08 / 08</div>
@@ -913,7 +944,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       </span>
     </p>
     <p>
-      <span data-i18n="m_p3" data-gr="Μέλη ΤΕΕ · Πιστοποίηση WELL AP · Μεθοδολογία BIM ·">TEE registered · WELL AP certified · BIM methodology ·</span>
+      <span data-i18n="m_p3" data-gr="Μέλη ΤΕΕ · Πιστοποίηση WELL AP ·">TEE registered · WELL AP certified ·</span>
       <span class="em" data-i18n="m_p3b" data-gr=" Ελληνικά, Αγγλικά, Σουηδικά, Ισπανικά."> Greek, English, Swedish, Spanish.</span>
     </p>
   </div>
