@@ -3,8 +3,47 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Eolos Design Lab — Athens · Madrid · Stockholm</title>
-<meta name="description" content="A design lab for hospitality, real estate, wellness, F&B and retail. Athens · Madrid · Stockholm." />
+<title>Eolos Design Lab — Athens · Architecture, Interior Design & Branding</title>
+<meta name="description" content="Athens design studio for hospitality, real estate, wellness, F&B and retail. Architecture, interior design, brand identity and workplace strategy." />
+<link rel="canonical" href="https://eoloslab.gr/" />
+
+<!-- Open Graph -->
+<meta property="og:type"        content="website" />
+<meta property="og:url"         content="https://eoloslab.gr/" />
+<meta property="og:title"       content="Eolos Design Lab — Athens Design Studio" />
+<meta property="og:description" content="Architecture, interior design, brand identity and workplace strategy for hospitality, real estate, wellness, F&B and retail." />
+<meta property="og:image"       content="https://eoloslab.gr/assets/granolita.jpeg" />
+<meta name="twitter:card"       content="summary_large_image" />
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R5M0RRBSRM"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-R5M0RRBSRM');</script>
+
+<!-- Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Eolos Design Lab",
+  "url": "https://eoloslab.gr",
+  "logo": "https://eoloslab.gr/assets/granolita.jpeg",
+  "image": "https://eoloslab.gr/assets/granolita.jpeg",
+  "description": "Athens design studio for architecture, interior design, brand identity and workplace strategy.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Ermou 56",
+    "addressLocality": "Athens",
+    "postalCode": "10563",
+    "addressCountry": "GR"
+  },
+  "telephone": "+302103009919",
+  "email": "info@eoloslab.com",
+  "openingHours": "Mo-Fr 10:00-19:00",
+  "areaServed": ["Athens", "Greece"],
+  "sameAs": ["https://wolfblanc.com"]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -404,7 +443,8 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
 .locations{
   border-top: 1px solid var(--rule);
   padding: clamp(60px, 9vh, 120px) var(--pad-x);
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  display: grid; grid-template-columns: 1fr 1.6fr; gap: clamp(32px, 6vw, 100px);
+  align-items: start;
 }
 @media (max-width: 860px){ .locations{ grid-template-columns: 1fr; } }
 .loc{
@@ -628,7 +668,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
           <em data-i18n="w1_t2" data-gr=" λιτότητα"> minimal.</em>
         </h3>
         <div class="meta-r">
-          <span class="pill" data-i18n="w1_kind" data-gr="Real Estate · Φωτογράφιση">Residential · Photography</span>
+          <span class="pill" data-i18n="w1_kind" data-gr="Real Estate · BTR Optimization">Real Estate · BTR Optimization</span>
           <span class="pill">2024</span>
         </div>
       </div>
@@ -647,7 +687,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
           <em data-i18n="w2_t2" data-gr=" πριν τον χώρο."> before the room.</em>
         </h3>
         <div class="meta-r">
-          <span class="pill" data-i18n="w2_kind" data-gr="Φιλοξενία · Οπτικοποίηση">Hospitality · Space Viz.</span>
+          <span class="pill" data-i18n="w2_kind" data-gr="Φιλοξενία · Interior Design">Hospitality · Interior Design</span>
           <span class="pill">2025</span>
         </div>
       </div>
@@ -666,7 +706,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
           <em data-i18n="w3_t2" data-gr=" με ηλιόφως."> sunlight.</em>
         </h3>
         <div class="meta-r">
-          <span class="pill" data-i18n="w3_kind" data-gr="Real Estate · Οπτικοποίηση">Real Estate · Visualization</span>
+          <span class="pill" data-i18n="w3_kind" data-gr="Real Estate · Asset Repositioning">Real Estate · Asset Repositioning</span>
           <span class="pill">2025</span>
         </div>
       </div>
@@ -685,7 +725,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
           <em data-i18n="w4_t2" data-gr=" τελετουργία."> ritual.</em>
         </h3>
         <div class="meta-r">
-          <span class="pill" data-i18n="w4_kind" data-gr="Ταυτότητα · Συσκευασία">Brand Identity · Packaging</span>
+          <span class="pill" data-i18n="w4_kind" data-gr="Interior Design · Branding · Web Design">Interior Design · Branding · Web</span>
           <span class="pill">2024</span>
         </div>
       </div>
@@ -704,7 +744,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
           <em data-i18n="w5_t2" data-gr=" δυνατά περιθώρια."> louder margins.</em>
         </h3>
         <div class="meta-r">
-          <span class="pill" data-i18n="w5_kind" data-gr="Ευεξία · Brand + Χώρος">Wellness · Brand + Space</span>
+          <span class="pill" data-i18n="w5_kind" data-gr="Wellness · Brand Identity">Wellness · Brand Identity</span>
           <span class="pill">2025</span>
         </div>
       </div>
@@ -723,7 +763,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
           <em data-i18n="w6_t2" data-gr=" μεσογειακή ανάγνωση."> Mediterranean read.</em>
         </h3>
         <div class="meta-r">
-          <span class="pill" data-i18n="w6_kind" data-gr="Κατοικία · Οπτικοποίηση">Residential · Visualization</span>
+          <span class="pill" data-i18n="w6_kind" data-gr="Office Design · Workplace Strategy">Office Design · Workplace Strategy</span>
           <span class="pill">2024</span>
         </div>
       </div>
@@ -734,7 +774,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 <!-- ─── SERVICES ──────────────────────────────────────────── -->
 <section id="services" class="services" data-screen-label="03 Services">
   <header class="sec-head">
-    <div class="kicker meta" data-i18n="svc_kicker" data-gr="Πέντε υπηρεσίες">Five services</div>
+    <div class="kicker meta" data-i18n="svc_kicker" data-gr="Υπηρεσίες">Full scope</div>
     <h2>
       <span data-i18n="svc_h2_1" data-gr="Τι κάνουμε,">What we do,</span>
       <span class="em" data-i18n="svc_h2_2" data-gr=" με τη σειρά που συνήθως μετράει."> in the order it usually matters.</span>
@@ -745,51 +785,61 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <div class="svc-row">
       <div class="ix meta">S / 01</div>
       <h3 class="name">
-        <span data-i18n="s1_n1" data-gr="Ταυτότητα">Brand</span>
-        <em data-i18n="s1_n2" data-gr=" Brand."> Identity.</em>
+        <span data-i18n="s1_n1" data-gr="Interior Design &amp;">Interior Design &amp;</span>
+        <em data-i18n="s1_n2" data-gr=" Αρχιτεκτονική."> Architecture.</em>
       </h3>
-      <p class="desc" data-i18n="s1_d" data-gr="Ονοματοδοσία, τοποθέτηση, το σύστημα που τα κρατάει όλα. Φτιαγμένο να ζει μετά το launch.">
-        Naming, positioning, the system that holds it. Built to outlive a launch.
+      <p class="desc" data-i18n="s1_d" data-gr="Εμπορικοί χώροι, φιλοξενία, retail, wellness. Από concept ως κατασκευή.">
+        Commercial spaces, hospitality, retail, wellness. From concept to construction.
       </p>
     </div>
     <div class="svc-row">
       <div class="ix meta">S / 02</div>
       <h3 class="name">
-        <span data-i18n="s2_n1" data-gr="Rebranding">Rebranding</span>
-        <em data-i18n="s2_n2" data-gr=" & Επανατοποθέτηση."> &amp; Repositioning.</em>
+        <span data-i18n="s2_n1" data-gr="Brand">Brand</span>
+        <em data-i18n="s2_n2" data-gr=" Identity."> Identity.</em>
       </h3>
-      <p class="desc" data-i18n="s2_d" data-gr="Για επιχειρήσεις που έχουν περάσει την ταυτότητα με την οποία ξεκίνησαν.">
-        For businesses that have outgrown the identity that got them here.
+      <p class="desc" data-i18n="s2_d" data-gr="Ονοματοδοσία, τοποθέτηση, το σύστημα που τα κρατάει όλα. Φτιαγμένο να ζει μετά το launch.">
+        Naming, positioning, the system that holds it. Built to outlive a launch.
       </p>
     </div>
     <div class="svc-row">
       <div class="ix meta">S / 03</div>
       <h3 class="name">
-        <span data-i18n="s3_n1" data-gr="Χώρος &">Space &amp;</span>
-        <em data-i18n="s3_n2" data-gr=" Οπτικοποίηση."> Visualization.</em>
+        <span data-i18n="s3_n1" data-gr="Rebranding &amp;">Rebranding &amp;</span>
+        <em data-i18n="s3_n2" data-gr=" Επανατοποθέτηση."> Repositioning.</em>
       </h3>
-      <p class="desc" data-i18n="s3_d" data-gr="Σχεδιάζουμε το δωμάτιο, το φως, τη μέρα. Την απόφαση πριν την κατασκευή.">
-        We render the room, the lighting, the day. The decision before the build.
+      <p class="desc" data-i18n="s3_d" data-gr="Για επιχειρήσεις που έχουν περάσει την ταυτότητα με την οποία ξεκίνησαν.">
+        For businesses that have outgrown the identity that got them here.
       </p>
     </div>
     <div class="svc-row">
       <div class="ix meta">S / 04</div>
       <h3 class="name">
-        <span data-i18n="s4_n1">Web</span>
-        <em data-i18n="s4_n2"> Design.</em>
+        <span data-i18n="s4_n1" data-gr="Workplace">Workplace</span>
+        <em data-i18n="s4_n2" data-gr=" Strategy."> Strategy.</em>
       </h3>
-      <p class="desc" data-i18n="s4_d" data-gr="Sites που πουλάνε αυτό που υπόσχεται το brand. Χωρίς πρότυπα, χωρίς θέατρο.">
-        Sites that sell what the brand already promises. No template, no theatre.
+      <p class="desc" data-i18n="s4_d" data-gr="Σχεδιασμός γραφείων, WELL AP συμβουλευτική, due diligence χώρου. Περιβάλλοντα που κάνουν τους ανθρώπους πιο αποδοτικούς.">
+        Office design, WELL AP consultancy, space due diligence. Environments that make people more effective.
       </p>
     </div>
     <div class="svc-row">
       <div class="ix meta">S / 05</div>
       <h3 class="name">
-        <span data-i18n="s5_n1" data-gr="Δημιουργική">Creative</span>
-        <em data-i18n="s5_n2" data-gr=" Διεύθυνση."> Direction.</em>
+        <span data-i18n="s5_n1" data-gr="Χώρος &amp;">Space &amp;</span>
+        <em data-i18n="s5_n2" data-gr=" Οπτικοποίηση."> Visualization.</em>
       </h3>
-      <p class="desc" data-i18n="s5_d" data-gr="Μακροχρόνια συνεργασία. Η σκέψη πίσω από κάθε καμπάνια, κάθε σεζόν.">
-        Long-form partnership. The thinking behind every campaign, every season.
+      <p class="desc" data-i18n="s5_d" data-gr="Σχεδιάζουμε το δωμάτιο, το φως, τη μέρα. Την απόφαση πριν την κατασκευή.">
+        We render the room, the lighting, the day. The decision before the build.
+      </p>
+    </div>
+    <div class="svc-row">
+      <div class="ix meta">S / 06</div>
+      <h3 class="name">
+        <span data-i18n="s6_n1">Web</span>
+        <em data-i18n="s6_n2"> Design.</em>
+      </h3>
+      <p class="desc" data-i18n="s6_d" data-gr="Sites που πουλάνε αυτό που υπόσχεται το brand. Χωρίς πρότυπα, χωρίς θέατρο.">
+        Sites that sell what the brand already promises. No template, no theatre.
       </p>
     </div>
   </div>
@@ -816,9 +866,9 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 </section>
 
 <!-- ─── LOCATIONS ────────────────────────────────────────── -->
-<section class="locations" aria-label="Studios" data-screen-label="05 Locations">
+<section class="locations" aria-label="Studio" data-screen-label="05 Studio">
   <div class="loc">
-    <span class="primary-mark"><span class="dot"></span><span data-i18n="loc_primary" data-gr="Έδρα">Primary studio</span></span>
+    <span class="primary-mark"><span class="dot"></span><span data-i18n="loc_primary" data-gr="Έδρα">Studio</span></span>
     <h3>
       <span data-i18n="loc1_city" data-gr="Αθήνα">Athens</span><em data-i18n="loc1_sub" data-gr=", Ελλάδα">, Greece</em>
     </h3>
@@ -826,29 +876,18 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <p class="addr">
       <span data-i18n="loc1_l1" data-gr="Ερμού 56">Ermou 56</span><br/>
       <span data-i18n="loc1_l2" data-gr="10563 Αθήνα">10563 Athens</span><br/>
-      <a href="tel:+302103009919">+30 210 300 99 19</a>
-    </p>
-  </div>
-  <div class="loc">
-    <span class="meta">Studio · ES</span>
-    <h3>
-      <span data-i18n="loc2_city" data-gr="Μαδρίτη">Madrid</span><em data-i18n="loc2_sub" data-gr=", Ισπανία">, Spain</em>
-    </h3>
-    <div class="clock" data-tz="Europe/Madrid">— : —  MAD</div>
-    <p class="addr">
-      Calle de Serrano 23<br/>
-      Salamanca 28001<br/>
+      <a href="tel:+302103009919">+30 210 300 99 19</a><br/>
       <a href="mailto:info@eoloslab.com">info@eoloslab.com</a>
     </p>
   </div>
-  <div class="loc">
-    <span class="meta">Studio · SE</span>
-    <h3>
-      <span data-i18n="loc3_city" data-gr="Στοκχόλμη">Stockholm</span><em data-i18n="loc3_sub" data-gr=", Σουηδία">, Sweden</em>
-    </h3>
-    <div class="clock" data-tz="Europe/Stockholm">— : —  STO</div>
-    <p class="addr">
-      <a href="mailto:info@eoloslab.com">info@eoloslab.com</a>
+  <div class="loc" style="border-top:1px solid var(--rule); padding-top:22px;">
+    <span class="meta" data-i18n="loc_scope" data-gr="Πλήρης εμβέλεια">Full scope</span>
+    <p class="addr" style="margin-top:14px; max-width: 44ch;" data-i18n="loc_scope_desc"
+       data-gr="Αρχιτεκτονική, interior design, brand identity, workplace strategy και web design — για φιλοξενία, real estate, wellness, εστίαση και retail.">
+      Architecture, interior design, brand identity, workplace strategy and web design — for hospitality, real estate, wellness, F&B and retail.
+    </p>
+    <p class="addr" style="margin-top:14px; color: var(--ink-mute); font-size: 0.88em;" data-i18n="loc_hours" data-gr="Δευ — Παρ · 10:00 — 19:00 EET">
+      Mon — Fri · 10:00 — 19:00 EET
     </p>
   </div>
 </section>
@@ -1042,8 +1081,8 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   updateClocks(); setInterval(updateClocks, 30 * 1000);
 
   /* ── marquee population ───────────────────────────────── */
-  const MARQ_EN = ["Brand Identity", "Space Visualization", "Rebranding", "Creative Direction", "Web Design", "Brand Strategy", "Packaging", "Art Direction"];
-  const MARQ_GR = ["Ταυτότητα Brand", "Οπτικοποίηση Χώρου", "Rebranding", "Δημιουργική Διεύθυνση", "Web Design", "Στρατηγική Brand", "Συσκευασία", "Art Direction"];
+  const MARQ_EN = ["Interior Design", "Architecture", "Brand Identity", "Workplace Strategy", "WELL AP", "Rebranding", "Space Visualization", "Web Design"];
+  const MARQ_GR = ["Interior Design", "Αρχιτεκτονική", "Brand Identity", "Workplace Strategy", "WELL AP", "Rebranding", "Οπτικοποίηση Χώρου", "Web Design"];
   function renderMarquee(){
     const track = document.getElementById("marquee-track");
     const items = (STATE.lang === "gr") ? MARQ_GR : MARQ_EN;
@@ -1053,6 +1092,14 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   // re-render marquee on lang change
   const _apply = apply;
   apply = function(){ _apply(); renderMarquee(); };
+
+  /* ── keyboard shortcut: ? to toggle tweaks ───────────── */
+  document.addEventListener("keydown", (e) => {
+    if (e.target.tagName === "INPUT" || e.target.tagName === "TEXTAREA") return;
+    if (e.key === "?") {
+      body.dataset.tweaksOpen = body.dataset.tweaksOpen === "true" ? "false" : "true";
+    }
+  });
 
   /* ── initial apply ────────────────────────────────────── */
   apply();
