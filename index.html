@@ -12,7 +12,7 @@
 <meta property="og:url"         content="https://eoloslab.gr/" />
 <meta property="og:title"       content="Eolos Design Lab — Athens Commercial Design Studio" />
 <meta property="og:description" content="Commercial interior design, branding, web, visualization and project management for hotels, restaurants, offices, retail and wellness in Athens." />
-<meta property="og:image"       content="https://eoloslab.gr/assets/granolita.jpeg" />
+<meta property="og:image"       content="https://eoloslab.gr/assets/granolita.webp" />
 <meta name="twitter:card"       content="summary_large_image" />
 
 <!-- Google Analytics -->
@@ -26,8 +26,8 @@
   "@type": "LocalBusiness",
   "name": "Eolos Design Lab",
   "url": "https://eoloslab.gr",
-  "logo": "https://eoloslab.gr/assets/granolita.jpeg",
-  "image": "https://eoloslab.gr/assets/granolita.jpeg",
+  "logo": "https://eoloslab.gr/assets/granolita.webp",
+  "image": "https://eoloslab.gr/assets/granolita.webp",
   "description": "Athens commercial design studio. Interior design, branding, web, visualization and project management for hotels, restaurants, offices, retail and wellness.",
   "address": {
     "@type": "PostalAddress",
@@ -44,6 +44,8 @@
 }
 </script>
 
+<link rel="preload" as="image" href="assets/dterra-hero.avif" type="image/avif" />
+<link rel="preload" as="image" href="assets/dterra-hero.webp" type="image/webp" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -645,8 +647,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       </h1>
     </div>
     <div class="hero-plate">
-      <img src="assets/dterra-hero.jpeg" alt="Dterra — bistro interior"
-           onerror="this.parentElement.classList.add('fallback'); this.style.display='none';" />
+      <picture>
+        <source srcset="assets/dterra-hero.avif" type="image/avif">
+        <img src="assets/dterra-hero.webp" alt="Dterra — bistro interior" fetchpriority="high" decoding="async">
+      </picture>
     </div>
   </div>
 
@@ -685,11 +689,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <!-- 01 K38 -->
     <article class="work" data-screen-label="Work · K38">
       <div class="frame">
-        <img src="assets/k38.jpeg" alt="K38 — open plan living and kitchen" loading="lazy"
-             onerror="this.parentElement.classList.add('fallback'); this.style.display='none';" />
-        <img src="assets/gallery/k38-2.jpeg" alt="K38 — rooftop terrace Athens" loading="lazy" />
-        <img src="assets/gallery/k38-3.jpeg" alt="K38 — materials board" loading="lazy" />
-        <img src="assets/gallery/k38-4.jpeg" alt="K38 — console and painting detail" loading="lazy" />
+        <picture><source srcset="assets/k38.avif" type="image/avif"><img src="assets/k38.webp" alt="K38 — open plan living and kitchen" loading="lazy" decoding="async"></picture>
+        <picture><source srcset="assets/gallery/k38-2.avif" type="image/avif"><img src="assets/gallery/k38-2.webp" alt="K38 — rooftop terrace Athens" loading="lazy" decoding="async"></picture>
+        <picture><source srcset="assets/gallery/k38-3.avif" type="image/avif"><img src="assets/gallery/k38-3.webp" alt="K38 — materials board" loading="lazy" decoding="async"></picture>
+        <picture><source srcset="assets/gallery/k38-4.avif" type="image/avif"><img src="assets/gallery/k38-4.webp" alt="K38 — console and painting detail" loading="lazy" decoding="async"></picture>
       </div>
       <div class="row">
         <div class="num meta">N° 01 / 08</div>
@@ -705,11 +708,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <!-- 02 Dterra -->
     <article class="work" data-bleed="asym-right" data-screen-label="Work · Dterra">
       <div class="frame">
-        <img src="assets/dterra.jpeg" alt="Bistró Dterra — restaurant interior" loading="lazy"
-             onerror="this.parentElement.classList.add('fallback'); this.style.display='none';" />
-        <img src="assets/gallery/dterra-2.jpeg" alt="Dterra — branded exterior facade" loading="lazy" />
-        <img src="assets/gallery/dterra-3.jpeg" alt="Dterra — wine and olives detail" loading="lazy" />
-        <img src="assets/gallery/dterra-4.jpeg" alt="Dterra — materials board" loading="lazy" />
+        <picture><source srcset="assets/dterra.avif" type="image/avif"><img src="assets/dterra.webp" alt="Bistró Dterra — restaurant interior" loading="lazy" decoding="async"></picture>
+        <picture><source srcset="assets/gallery/dterra-2.avif" type="image/avif"><img src="assets/gallery/dterra-2.webp" alt="Dterra — branded exterior facade" loading="lazy" decoding="async"></picture>
+        <picture><source srcset="assets/gallery/dterra-3.avif" type="image/avif"><img src="assets/gallery/dterra-3.webp" alt="Dterra — wine and olives detail" loading="lazy" decoding="async"></picture>
+        <picture><source srcset="assets/gallery/dterra-4.avif" type="image/avif"><img src="assets/gallery/dterra-4.webp" alt="Dterra — materials board" loading="lazy" decoding="async"></picture>
       </div>
       <div class="row">
         <div class="num meta">N° 02 / 08</div>
@@ -726,11 +728,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <!-- 03 A75 -->
     <article class="work" data-screen-label="Work · A75">
       <div class="frame">
-        <img src="assets/a75.jpeg" alt="A75 — living room with chandelier" loading="lazy"
-             onerror="this.parentElement.classList.add('fallback'); this.style.display='none';" />
-        <img src="assets/gallery/a75-2.jpeg" alt="A75 — bedroom with walnut joinery" loading="lazy" />
-        <img src="assets/gallery/a75-3.jpeg" alt="A75 — living room detail" loading="lazy" />
-        <img src="assets/gallery/a75-4.jpeg" alt="A75 — materials board" loading="lazy" />
+        <picture><source srcset="assets/a75.avif" type="image/avif"><img src="assets/a75.webp" alt="A75 — living room with chandelier" loading="lazy" decoding="async"></picture>
+        <picture><source srcset="assets/gallery/a75-2.avif" type="image/avif"><img src="assets/gallery/a75-2.webp" alt="A75 — bedroom with walnut joinery" loading="lazy" decoding="async"></picture>
+        <picture><source srcset="assets/gallery/a75-3.avif" type="image/avif"><img src="assets/gallery/a75-3.webp" alt="A75 — living room detail" loading="lazy" decoding="async"></picture>
+        <picture><source srcset="assets/gallery/a75-4.avif" type="image/avif"><img src="assets/gallery/a75-4.webp" alt="A75 — materials board" loading="lazy" decoding="async"></picture>
       </div>
       <div class="row">
         <div class="num meta">N° 03 / 08</div>
@@ -746,12 +747,11 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <!-- 04 Granolita -->
     <article class="work" data-bleed="asym-left" data-screen-label="Work · Granolita">
       <div class="frame">
-        <img src="assets/granolita.jpeg" alt="Granolita — exterior entrance" loading="lazy"
-             onerror="this.parentElement.classList.add('fallback'); this.style.display='none';" />
-        <img src="assets/gallery/granolita-2.jpeg" alt="Granolita — monolithic bar" loading="lazy" />
-        <img src="assets/gallery/granolita-3.jpeg" alt="Granolita — café seating and light" loading="lazy" />
-        <img src="assets/gallery/granolita-4.jpeg" alt="Granolita — branded wall and shelving" loading="lazy" />
-        <img src="assets/gallery/granolita-5.jpeg" alt="Granolita — materials board" loading="lazy" />
+        <picture><source srcset="assets/granolita.avif" type="image/avif"><img src="assets/granolita.webp" alt="Granolita — exterior entrance" loading="lazy" decoding="async"></picture>
+        <picture><source srcset="assets/gallery/granolita-2.avif" type="image/avif"><img src="assets/gallery/granolita-2.webp" alt="Granolita — monolithic bar" loading="lazy" decoding="async"></picture>
+        <picture><source srcset="assets/gallery/granolita-3.avif" type="image/avif"><img src="assets/gallery/granolita-3.webp" alt="Granolita — café seating and light" loading="lazy" decoding="async"></picture>
+        <picture><source srcset="assets/gallery/granolita-4.avif" type="image/avif"><img src="assets/gallery/granolita-4.webp" alt="Granolita — branded wall and shelving" loading="lazy" decoding="async"></picture>
+        <picture><source srcset="assets/gallery/granolita-5.avif" type="image/avif"><img src="assets/gallery/granolita-5.webp" alt="Granolita — materials board" loading="lazy" decoding="async"></picture>
       </div>
       <div class="row">
         <div class="num meta">N° 04 / 08</div>
@@ -768,11 +768,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <!-- 05 Selva -->
     <article class="work" data-screen-label="Work · Selva">
       <div class="frame">
-        <img src="assets/selva.jpeg" alt="Selva Hotel — branded reception lobby" loading="lazy"
-             onerror="this.parentElement.classList.add('fallback'); this.style.display='none';" />
-        <img src="assets/gallery/selva-2.jpeg" alt="Selva Hotel — grand atrium with olive trees" loading="lazy" />
-        <img src="assets/gallery/selva-3.jpeg" alt="Selva Hotel — exterior courtyard and pool" loading="lazy" />
-        <img src="assets/gallery/selva-4.jpeg" alt="Selva Hotel — indoor spa pool" loading="lazy" />
+        <picture><source srcset="assets/selva.avif" type="image/avif"><img src="assets/selva.webp" alt="Selva Hotel — branded reception lobby" loading="lazy" decoding="async"></picture>
+        <picture><source srcset="assets/gallery/selva-2.avif" type="image/avif"><img src="assets/gallery/selva-2.webp" alt="Selva Hotel — grand atrium with olive trees" loading="lazy" decoding="async"></picture>
+        <picture><source srcset="assets/gallery/selva-3.avif" type="image/avif"><img src="assets/gallery/selva-3.webp" alt="Selva Hotel — exterior courtyard and pool" loading="lazy" decoding="async"></picture>
+        <picture><source srcset="assets/gallery/selva-4.avif" type="image/avif"><img src="assets/gallery/selva-4.webp" alt="Selva Hotel — indoor spa pool" loading="lazy" decoding="async"></picture>
       </div>
       <div class="row">
         <div class="num meta">N° 05 / 08</div>
@@ -789,11 +788,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <!-- 06 Norrsken -->
     <article class="work" data-bleed="asym-right" data-screen-label="Work · Norrsken">
       <div class="frame">
-        <img src="assets/norrsken.jpeg" alt="Norrsken Office — open plan workspace" loading="lazy"
-             onerror="this.parentElement.classList.add('fallback'); this.style.display='none';" />
-        <img src="assets/gallery/norrsken-2.jpeg" alt="Norrsken Office — kitchen and break area" loading="lazy" />
-        <img src="assets/gallery/norrsken-3.jpeg" alt="Norrsken Office — acoustic focus pod" loading="lazy" />
-        <img src="assets/gallery/norrsken-4.jpeg" alt="Norrsken Office — materials board" loading="lazy" />
+        <picture><source srcset="assets/norrsken.avif" type="image/avif"><img src="assets/norrsken.webp" alt="Norrsken Office — open plan workspace" loading="lazy" decoding="async"></picture>
+        <picture><source srcset="assets/gallery/norrsken-2.avif" type="image/avif"><img src="assets/gallery/norrsken-2.webp" alt="Norrsken Office — kitchen and break area" loading="lazy" decoding="async"></picture>
+        <picture><source srcset="assets/gallery/norrsken-3.avif" type="image/avif"><img src="assets/gallery/norrsken-3.webp" alt="Norrsken Office — acoustic focus pod" loading="lazy" decoding="async"></picture>
+        <picture><source srcset="assets/gallery/norrsken-4.avif" type="image/avif"><img src="assets/gallery/norrsken-4.webp" alt="Norrsken Office — materials board" loading="lazy" decoding="async"></picture>
       </div>
       <div class="row">
         <div class="num meta">N° 06 / 08</div>
@@ -810,10 +808,9 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <!-- 07 V1 -->
     <article class="work" data-bleed="asym-left" data-screen-label="Work · V1">
       <div class="frame">
-        <img src="assets/v1.jpeg" alt="V1 — living room with fireplace" loading="lazy"
-             onerror="this.parentElement.classList.add('fallback'); this.style.display='none';" />
-        <img src="assets/gallery/v1-2.jpeg" alt="V1 — kitchen" loading="lazy" />
-        <img src="assets/gallery/v1-3.jpeg" alt="V1 — bedroom" loading="lazy" />
+        <picture><source srcset="assets/v1.avif" type="image/avif"><img src="assets/v1.webp" alt="V1 Boutique — living room render" loading="lazy" decoding="async"></picture>
+        <picture><source srcset="assets/gallery/v1-2.avif" type="image/avif"><img src="assets/gallery/v1-2.webp" alt="V1 Boutique — bedroom render" loading="lazy" decoding="async"></picture>
+        <picture><source srcset="assets/gallery/v1-3.avif" type="image/avif"><img src="assets/gallery/v1-3.webp" alt="V1 Boutique — detail render" loading="lazy" decoding="async"></picture>
       </div>
       <div class="row">
         <div class="num meta">N° 07 / 08</div>
@@ -829,10 +826,9 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <!-- 08 K12 -->
     <article class="work" data-screen-label="Work · K12">
       <div class="frame">
-        <img src="assets/k12.webp" alt="K12 — short-term rental optimization" loading="lazy"
-             onerror="this.parentElement.classList.add('fallback'); this.style.display='none';" />
-        <img src="assets/gallery/k12-2.webp" alt="K12 — living area" loading="lazy" />
-        <img src="assets/gallery/k12-3.webp" alt="K12 — bedroom" loading="lazy" />
+        <picture><source srcset="assets/k12.avif" type="image/avif"><img src="assets/k12.webp" alt="K12 — short-term rental optimization" loading="lazy" decoding="async"></picture>
+        <picture><source srcset="assets/gallery/k12-2.avif" type="image/avif"><img src="assets/gallery/k12-2.webp" alt="K12 — living area" loading="lazy" decoding="async"></picture>
+        <picture><source srcset="assets/gallery/k12-3.avif" type="image/avif"><img src="assets/gallery/k12-3.webp" alt="K12 — bedroom" loading="lazy" decoding="async"></picture>
       </div>
       <div class="row">
         <div class="num meta">N° 08 / 08</div>
@@ -984,8 +980,8 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 <section id="contact" class="contact" data-screen-label="06 Contact">
   <div class="kicker meta" data-i18n="c_kicker" data-gr="Ξεκινήστε ένα project">Start a project</div>
   <h2 class="lede">
-    <span data-i18n="c_l1" data-gr="Ο πιο γρήγορος τρόπος είναι το τηλέφωνο.">The fastest way is the phone.</span>
-    <span class="pale" data-i18n="c_l2" data-gr=" Ο επόμενος είναι"> The next fastest is</span>
+    <span data-i18n="c_l1" data-gr="Ο πιο γρήγορος τρόπος είναι η κλήση.">The fastest way is the call.</span>
+    <span class="pale" data-i18n="c_l2" data-gr=" Ο επόμενος είναι να"> The next fastest is to</span>
     <a href="mailto:info@eoloslab.com" class="start em" data-i18n="c_l3" data-gr=" ξεκινήστε ένα project →"> start a project →</a>
   </h2>
   <div class="grid">
