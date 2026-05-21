@@ -223,6 +223,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
 }
 .hero h1 .em   { font-style: italic; }
 .hero h1 .pale { color: var(--ink-faint); }
+html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
 .hero .strip{
   margin-top: clamp(28px, 5vh, 60px);
   display: grid;
@@ -661,7 +662,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 
   <div class="strip">
     <p class="lede" data-i18n="hero_lede"
-       data-gr="Η ίδια ομάδα. Χώρος, brand, web. Από την πρώτη μέρα.">
+       data-gr="Η ίδια ομάδα. Χώρος, brand, web.<br>Από την πρώτη μέρα.">
       The same team. Space, brand, web.<br>From day one.
     </p>
     <a href="#contact" class="cta" style="align-self:end;">
