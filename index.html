@@ -561,6 +561,8 @@ body[data-tweaks-open="true"] #tweaks-trigger{ display: none; }
   z-index: 1000;
   backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
   box-shadow: 0 24px 60px -20px rgba(0,0,0,0.5);
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
   display: none;
 }
 body[data-tweaks-open="true"] #tweaks{ display: block; }
