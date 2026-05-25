@@ -516,6 +516,35 @@ html[lang="el"] .hero h1{ font-size: clamp(40px, 6.2vw, 108px); }
 }
 .contact .grid .cell a:hover{ color: var(--accent); }
 
+/* ─── Intake form ─── */
+.intake-form{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--rule);margin-top:64px;}
+.intake-form .field{display:flex;flex-direction:column;gap:10px;padding:18px 20px 18px 0;border-bottom:1px solid var(--rule);}
+.intake-form .field:nth-child(2n){padding-left:20px;padding-right:0;border-left:1px solid var(--rule);}
+.intake-form .field.full{grid-column:1/-1;padding-right:0;}
+.intake-form .field.full:nth-child(2n){padding-left:0;border-left:0;}
+@media(max-width:700px){.intake-form{grid-template-columns:1fr;}.intake-form .field,.intake-form .field:nth-child(2n){padding:18px 0;border-left:0;}}
+.intake-form .field label{font-family:var(--f-mono);font-size:var(--t-meta);letter-spacing:0.10em;text-transform:uppercase;color:var(--ink-mute);display:flex;justify-content:space-between;align-items:baseline;}
+.intake-form .field label .ix{color:var(--ink-faint);}
+.intake-form .field input,.intake-form .field textarea{width:100%;font-family:var(--f-display);font-size:clamp(20px,1.8vw,28px);line-height:1.2;letter-spacing:-0.005em;color:var(--ink);background:none;border:none;border-bottom:1px solid transparent;padding:6px 0 8px;transition:border-color 200ms;resize:vertical;}
+.intake-form .field input::placeholder,.intake-form .field textarea::placeholder{color:var(--ink-faint);font-style:italic;}
+.intake-form .field:focus-within label{color:var(--ink);}
+.intake-form .field input:focus,.intake-form .field textarea:focus{outline:none;border-bottom-color:var(--accent);}
+.intake-form .chip-row{display:flex;flex-wrap:wrap;gap:8px;padding:4px 0 8px;}
+.intake-form .chip{font-family:var(--f-mono);font-size:var(--t-meta);letter-spacing:0.08em;text-transform:uppercase;padding:8px 12px;border-radius:999px;border:1px solid var(--rule);color:var(--ink-soft);background:none;cursor:pointer;transition:background 200ms,color 200ms,border-color 200ms;font-weight:400;}
+.intake-form .chip:hover{border-color:var(--accent);color:var(--ink);}
+.intake-form .chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink);}
+.intake-actions{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;padding-top:22px;gap:16px;flex-wrap:wrap;}
+.intake-actions .legal{color:var(--ink-mute);max-width:50ch;font-family:var(--f-mono);font-size:var(--t-meta);letter-spacing:0.08em;text-transform:uppercase;}
+.intake-actions .submit{display:inline-flex;align-items:center;gap:12px;padding:14px 22px;background:var(--ink);color:var(--bg);border-radius:999px;border:none;font-family:var(--f-mono);font-size:var(--t-meta);letter-spacing:0.10em;text-transform:uppercase;cursor:pointer;transition:background 220ms,color 220ms;}
+.intake-actions .submit:hover{background:var(--accent);color:var(--bg);}
+.intake-actions .submit:disabled{opacity:.5;cursor:not-allowed;}
+.intake-actions .submit .arrow{transition:transform 280ms cubic-bezier(.2,.7,.2,1);}
+.intake-actions .submit:hover .arrow{transform:translateX(4px);}
+.intake-confirmed{display:none;margin-top:48px;}
+.intake-confirmed h3{font-family:var(--f-display);font-size:clamp(28px,3vw,44px);line-height:1;letter-spacing:-0.015em;margin-bottom:12px;}
+.intake-confirmed h3 em{font-style:italic;color:var(--ink-soft);}
+.intake-confirmed p{color:var(--ink-mute);}
+
 /* ─── Footer ─── */
 .foot{
   border-top: 1px solid var(--rule);
@@ -1034,6 +1063,53 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       <div class="big" data-i18n="c_v4" data-gr="Δευ — Παρ · 09:00 — 18:00 EET">Mon — Fri · 09:00 — 18:00 EET</div>
     </div>
   </div>
+
+  <form class="intake-form" id="intake-form" action="https://formspree.io/f/xeedreeq" method="POST">
+    <input type="hidden" name="_subject" value="New project brief — eoloslab.gr">
+    <input type="hidden" name="services" id="selected-services" value="">
+    <div class="field">
+      <label><span data-i18n="f_name" data-gr="Όνομα">Your name</span><span class="ix">01</span></label>
+      <input type="text" name="name" placeholder="Μαρία Παπαδοπούλου" required>
+    </div>
+    <div class="field">
+      <label><span>Email</span><span class="ix">02</span></label>
+      <input type="email" name="email" placeholder="maria@example.com" required>
+    </div>
+    <div class="field">
+      <label><span data-i18n="f_company" data-gr="Εταιρεία">Company</span><span class="ix">03</span></label>
+      <input type="text" name="company" placeholder="Café Nótos">
+    </div>
+    <div class="field">
+      <label><span data-i18n="f_city" data-gr="Πόλη">City</span><span class="ix">04</span></label>
+      <input type="text" name="city" placeholder="Αθήνα" required>
+    </div>
+    <div class="field full">
+      <label><span data-i18n="f_services" data-gr="Τι χρειάζεστε">What we'd help with</span><span class="ix">05</span></label>
+      <div class="chip-row">
+        <button type="button" class="chip" aria-pressed="false" data-i18n="f_s1" data-gr="Εσωτερική Διακόσμηση">Interior Design</button>
+        <button type="button" class="chip" aria-pressed="false" data-i18n="f_s2" data-gr="Branding">Branding</button>
+        <button type="button" class="chip" aria-pressed="false" data-i18n="f_s3" data-gr="Σχεδιασμός Web">Web Design</button>
+        <button type="button" class="chip" aria-pressed="false" data-i18n="f_s4" data-gr="Δημιουργική Διεύθυνση">Creative Direction</button>
+        <button type="button" class="chip" aria-pressed="false" data-i18n="f_s5" data-gr="Οπτικοποίηση">Visualization</button>
+        <button type="button" class="chip" aria-pressed="false" data-i18n="f_s6" data-gr="Δεν ξέρω ακόμα">Not sure yet</button>
+      </div>
+    </div>
+    <div class="field full">
+      <label><span data-i18n="f_brief" data-gr="Πείτε μας">Brief</span><span class="ix">06</span></label>
+      <textarea name="brief" rows="3" required data-i18n-placeholder="f_brief_ph" data-gr-placeholder="Τι είναι η επιχείρηση, ποια είναι η στιγμή, και τι χρειάζεστε;" placeholder="What is the business, what is the moment, and what do you need?"></textarea>
+    </div>
+    <div class="intake-actions">
+      <p class="legal" data-i18n="f_legal" data-gr="Χρησιμοποιούμε τα στοιχεία σας μόνο για να απαντήσουμε. Δεν μοιραζόμαστε briefs.">By submitting, you agree we may write you back about your project. We don't share briefs.</p>
+      <button type="button" class="submit" id="intake-submit">
+        <span data-i18n="f_submit" data-gr="Αποστολή">Submit brief</span><span class="arrow">→</span>
+      </button>
+    </div>
+  </form>
+
+  <div class="intake-confirmed" id="intake-confirmed">
+    <h3 data-i18n="f_thanks" data-gr="Ευχαριστούμε.<em> Ένας partner θα διαβάσει το brief σας.</em>">Got it.<em> A partner will read your brief.</em></h3>
+    <p data-i18n="f_expect" data-gr="Συνήθως απαντάμε εντός δύο εργάσιμων ημερών.">Usually back within two working days.</p>
+  </div>
 </section>
 
 <!-- ─── FOOTER ───────────────────────────────────────────── -->
@@ -1121,6 +1197,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     document.querySelectorAll("[data-i18n]").forEach(el => {
       if (lang === "gr" && el.dataset.gr) el.innerHTML = el.dataset.gr;
       else el.innerHTML = el.dataset.en;
+    });
+    // placeholders
+    document.querySelectorAll("[data-gr-placeholder]").forEach(el => {
+      el.placeholder = lang === "gr" ? el.dataset.grPlaceholder : el.getAttribute("placeholder") || el.dataset.enPlaceholder || '';
     });
     // chrome lang switch button pressed-state
     document.querySelectorAll(".chrome .lang button").forEach(b => {
@@ -1239,6 +1319,49 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       idx = (idx + 1) % imgs.length;
       imgs[idx].classList.add("active");
     }, 4500);
+  });
+})();
+
+// ─── Intake form ───
+(function(){
+  const form = document.getElementById('intake-form');
+  const submitBtn = document.getElementById('intake-submit');
+  const confirmed = document.getElementById('intake-confirmed');
+  const servicesField = document.getElementById('selected-services');
+  if(!form) return;
+
+  // Chip toggle
+  form.querySelectorAll('.chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const pressed = chip.getAttribute('aria-pressed') === 'true';
+      chip.setAttribute('aria-pressed', !pressed);
+      const selected = [...form.querySelectorAll('.chip[aria-pressed="true"]')].map(c => c.textContent);
+      servicesField.value = selected.join(', ');
+    });
+  });
+
+  // Submit
+  submitBtn.addEventListener('click', async () => {
+    if(!form.checkValidity()){ form.reportValidity(); return; }
+    submitBtn.disabled = true;
+    submitBtn.querySelector('span').textContent = '...';
+    try {
+      const res = await fetch('https://formspree.io/f/xeedreeq', {
+        method: 'POST', body: new FormData(form), headers: {'Accept':'application/json'}
+      });
+      if(res.ok){
+        form.style.display = 'none';
+        confirmed.style.display = 'block';
+      } else {
+        alert('Something went wrong. Please email info@eoloslab.com directly.');
+        submitBtn.disabled = false;
+        submitBtn.querySelector('span').textContent = 'Submit brief';
+      }
+    } catch(e){
+      alert('Network error. Please email info@eoloslab.com directly.');
+      submitBtn.disabled = false;
+      submitBtn.querySelector('span').textContent = 'Submit brief';
+    }
   });
 })();
 </script>
